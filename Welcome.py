@@ -21,21 +21,22 @@ st.text('Select a page from the sidebar to get started.')
 st.sidebar.success("Select a page above.")
 
 #Read in data from Github
-url = 'https://raw.githubusercontent.com/hankshackleford/KorbelFantasyApp/main/owner%20data.csv'
-df_selected = pd.read_csv(url)
-print(df_selected)
+url = 'https://raw.githubusercontent.com/hankshackleford/KorbelFantasyApp/main/FF23_for_github.csv'
+df = pd.read_csv(url)
+print(df)
+
+df['GP'] = df['GP'].fillna(0)
+df['GP'] = df['GP'].astype('int')
 
 #setting palette
 colors=['#1A8A41','#521052']
 
-win_loss = px.bar(
-    data_frame = df_selected,
-    x = "Owner",
-    y = ["Wins","Losses"],
-    orientation = "v",
-    barmode = 'group',
-    color_discrete_sequence=colors,
-    opacity= .8,
-    title='Wins and Losses',
-)
-st.plotly_chart(win_loss)
+
+
+scatter = px.scatter(df.query("Year==2022"), x="Total Points", y="Draft Value",
+	         size="GP", 
+             color="POS",
+                 hover_name="PLAYER", size_max=17,
+                 width= 1200,
+                 height=1000)
+st.plotly_chart(scatter)
