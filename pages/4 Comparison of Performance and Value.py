@@ -43,6 +43,6 @@ scatter = px.scatter(df.query("Year==2022"), x="Total Points", y="Draft Value",
              color="POS",
                  hover_name="PLAYER", size_max=17,
                  title="2022 Performance and Draft Value of NFL Players",
-                 width= 1200,
-                 height=1000)
+                 width= 750,
+                 height=500)
 st.plotly_chart(scatter)

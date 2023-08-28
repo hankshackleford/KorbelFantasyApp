@@ -82,6 +82,6 @@ st.data_editor(
             format="%6.0f", min_value=vols_min,max_value=vols_max)        
         },
     hide_index=True,
-    width=2500,
+    width=1500,
     height=2500,
 )
