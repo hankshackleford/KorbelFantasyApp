@@ -16,27 +16,11 @@ st.set_page_config(
 
 st.write("# Welcome to the Official App of the Korbel Fantasy League.")
 st.text('Select a page from the sidebar to get started.')
+st.text('Player Data: analyze data on players for 2023 (including projections) and 2022 (including draft recap')
+st.text('Past Seasons: recap each season, including full season stats')
+st.text('Team Owners: assess total historic performance of all team owners')
+
+
 
 
 st.sidebar.success("Select a page above.")
-
-#Read in data from Github
-url = 'https://raw.githubusercontent.com/hankshackleford/KorbelFantasyApp/main/FF23_for_github.csv'
-df = pd.read_csv(url)
-print(df)
-
-df['GP'] = df['GP'].fillna(0)
-df['GP'] = df['GP'].astype('int')
-
-#setting palette
-colors=['#1A8A41','#521052']
-
-
-
-scatter = px.scatter(df.query("Year==2022"), x="Total Points", y="Draft Value",
-	         size="GP", 
-             color="POS",
-                 hover_name="PLAYER", size_max=17,
-                 width= 1200,
-                 height=1000)
-st.plotly_chart(scatter)
