@@ -10,7 +10,8 @@ import streamlit as st
 import pandas as pd
 
 #Set titles and sidebar header
-st.set_page_config(page_title="Player Data", page_icon="📊")
+st.set_page_config(page_title="Player Data", page_icon="📊",
+layout="wide")
 st.title('Fantasy Football Analytics: Player Data')
 st.sidebar.header('User Selections')
 st.text("Here you will find 2022 actual data (including a draft recap) as well as 2023 projections, supplied by FantasyPros")

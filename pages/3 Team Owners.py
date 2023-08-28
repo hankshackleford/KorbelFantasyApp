@@ -14,7 +14,8 @@ import plotly.express as px
 
 
 #Set titles and sidebar header
-st.set_page_config(page_title="Team Owners", page_icon="🐍")
+st.set_page_config(page_title="Team Owners", page_icon="🐍",
+layout="wide")
 st.title('Team Owners')
 st.text("Find info on team owners here.")
 

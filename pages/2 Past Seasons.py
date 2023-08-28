@@ -12,7 +12,8 @@ import plotly.express as px
 
 
 #Set titles and sidebar header
-st.set_page_config(page_title="History of Past Seasons", page_icon="🏆")
+st.set_page_config(page_title="History of Past Seasons", page_icon="🏆",
+layout="wide")
 st.title('Korbel Fantasy Football Past Seasons')
 st.text("Walk these hallowed halls of winners and losers, and relive glory of past seasons.")
 

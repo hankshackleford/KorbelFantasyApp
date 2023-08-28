@@ -12,6 +12,7 @@ import plotly.express as px
 st.set_page_config(
     page_title="2022 Performance and Draft Value",
     page_icon="🏈",
+    layout="wide"
 )
 
 st.write("# Analysis of 2022 Performance and Draft Value")
