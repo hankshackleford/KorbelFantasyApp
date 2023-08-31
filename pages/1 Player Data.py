@@ -38,6 +38,7 @@ df_selected = df_selected[(df_selected.POS.isin(selected_pos))]
 df_selected = df_selected.drop(['NAME'], axis=1)
 
 
+
 #Set min/max references for databars
 ppg_min=df_selected['PPG'].min()
 ppg_max=df_selected['PPG'].max()
